@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Elegant Notes</h1>
+            <img src="quil.png" alt="">
+        </div>
+        <div class="sub">
+            <p>Store your thought and ideas in style.</p>
+        </div>
+
+        <div class="control">
+            <div class="control-center">
+                <input type="text" id="searchNotes" class="search-notes" placeholder="Search notes...">
+                <select name="" id="select" class="select-drop">
+                    <option value="all">All Notes</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="ideas">Ideas</option>
+                    <option value="family">Family</option>
+                    
+                </select>
+                <button class="addNoteBtn" onclick="openNoteDialog()">
+                    <i class="ri-add-fill"></i>Add 
+                </button>
+            </div>
+        </div>
+        <div id="notesContainer" class="notes-grid">
+            <!-- notes will be added here -->
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <i class="ri-file-add-fill"></i>
+            <h3>No Notes Yet</h3>
+            <p>Add your first note by clicking the "Add" button</p>
+
+        </div>
+
+      
+    </div>
+    <div id="noteDialog" class="note-dialog">
+        
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialogTitle">Add New Note</h2>
+                <button class="close-btn" onclick="closeNoteDialog()">❌</button>
+            </div>
+            <form id="noteForm">
+                <label for="noteTitle" class="form-label">Title</label>
+                <input type="text" id="noteTitle" class="form-title" placeholder="Note Title" required>
+                <label for="noteContent" class="form-label">Content</label>
+                <textarea  id="noteContent" class="form-textarea" placeholder="Write your note here..." required></textarea>
+
+                <div class="dialog-actions">
+                    <div class="categories">
+                        <label class="category-option work">
+                          <input type="radio" name="category" value="work" required>
+                          Work
+                        </label>
+                        <label class="category-option personal">
+                          <input type="radio" name="category" value="personal" required>
+                          Personal
+                        </label>
+                        <label class="category-option ideas">
+                          <input type="radio" name="category" value="ideas" required>
+                          Ideas
+                        </label>
+                        <label class="category-option family">
+                          <input type="radio" name="category" value="family" required>
+                          Family
+                        </label>
+                      </div>
+                      
+
+
+
+                    <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel</button>
+                    <button type="submit" class="save-btn">Save Note</button>
+                </div>
+            </form>
+        </div>
+       </div>
+       <div id="readNoteDialog" class="note-dialog">
+        <div class="dialog-content">
+          <div class="dialog-header">
+            <h2 id="readNoteTitle"></h2>
+            <button class="close-btn" onclick="closeReadDialog()">❌</button>
+          </div>
+          <p id="readNoteContent"></p>
+          <p class="note-date">Date: <span id="readNoteDate"></span></p>
+          <div class="dialog-footer">
+            <span id="readNoteCategory" class="category"></span>
+          </div>
+        </div>
+      </div>
+      
+          
+
+      </div>
+         
+    <footer class="footer" id="foot">
+        <p>Handcrafted with ❤️ in New Jersey &copy; &nbsp;<h4>AliRaza Qureshi</h4>  &nbsp;  &nbsp;<span id="year"></span></p>
+    </footer>  
+
+    <script src="script.js" defer></script>
+</body>
+</html>
